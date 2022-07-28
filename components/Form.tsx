@@ -1,23 +1,35 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 function Form() {
   return (
     <section>
       <div>
-
         <header>
           <h1>Wedding</h1>
         </header>
         <form>
-          <label>
-            Name:
-            <input type="text" name="name" />
+          <label htmlFor="email">
+            email
+            <input
+              type="text"
+              name="email"
+              id="email"
+              placeholder="example@email.com"
+            />
           </label>
-          <label>
-            Email:
-            <input type="email" name="email" />
+          <label htmlFor="password">
+            password
+            <input
+              type="password"
+              name="email"
+              id="password"
+            />
           </label>
-          <button type="submit">Send</button>
+          <button
+            type="submit"
+          >
+            Send
+          </button>
           <span>Forget password?</span>
         </form>
       </div>
