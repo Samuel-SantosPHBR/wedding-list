@@ -1,11 +1,14 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Input from './Input';
 
 type Props = {
   children: React.ReactNode;
 }
 
 function Form({ children }: Props) {
+  const { pathname } = useRouter();
   return (
     <section>
       <div>
@@ -14,23 +17,17 @@ function Form({ children }: Props) {
         </header>
         <form>
           <span>{ children }</span>
-          <label htmlFor="email">
-            email
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="example@email.com"
-            />
-          </label>
-          <label htmlFor="password">
-            password
-            <input
-              type="password"
-              name="email"
-              id="password"
-            />
-          </label>
+          <Input
+            type="text"
+            id="email"
+            label="Email"
+            placeholder="example@email.com"
+          />
+          <Input
+            type="password"
+            id="password"
+            label="Password"
+          />
           <button
             type="submit"
           >
@@ -40,9 +37,17 @@ function Form({ children }: Props) {
         </form>
       </div>
       <div>
-        <Link href="/signup">
-          <a>Sign Up</a>
-        </Link>
+        {
+          pathname === '/signup' ? (
+            <Link href="/login">
+              <a>Sign In</a>
+            </Link>
+          ) : (
+            <Link href="/signup">
+              <a>Sign Up</a>
+            </Link>
+          )
+        }
       </div>
     </section>
   );
