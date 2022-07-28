@@ -1,6 +1,11 @@
+import React from 'react';
 import Link from 'next/link';
 
-function Form() {
+type Props = {
+  children: React.ReactNode;
+}
+
+function Form({ children }: Props) {
   return (
     <section>
       <div>
@@ -8,6 +13,7 @@ function Form() {
           <h1>Wedding</h1>
         </header>
         <form>
+          <span>{ children }</span>
           <label htmlFor="email">
             email
             <input

@@ -1,15 +1,15 @@
-import Form from '../components/Form';
 import Hero from '../components/Hero';
+import Form from '../components/Form';
 
-function Login() {
+function SingUp() {
   return (
     <>
       <Hero />
       <Form>
-        Sign In
+        Sing Up
       </Form>
     </>
   );
 }
 
-export default Login;
+export default SingUp;
